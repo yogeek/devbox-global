@@ -14,15 +14,39 @@
     "kubernetes@1.26.3",
     "kubernetes-helm-wrapped@latest",
     "yq@latest",
-    "diskonaut@latest"
+    "diskonaut@latest",
+    "bat@latest",
+    "htop@latest",
+    "zoxide@latest",
+    "fzf@latest",
+    "fzf-zsh@latest",
+    "eza@latest",
+    "starship@latest"
   ],
+  "env": {
+    "DEVBOX_GLOBAL_PREFIX": "$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default",
+    "DEVBOX_GLOBAL_ROOT":   "$HOME/.local/share/devbox/global/current"
+  },
   "shell": {
     "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
+      ". ${DEVBOX_GLOBAL_ROOT}/init.sh"
     ],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
+      "install-hook-bash": [
+        "echo adding 'devbox global shellenv' to ~/.bashrc",
+        "grep -qF 'devbox global shellenv' ~/.bashrc || echo 'eval \"$(devbox global shellenv --init-hook)\"' >> ~/.bashrc",
+        "tail -n 1 ~/.bashrc"
+      ],
+      "install-hook-zsh": [
+        "echo adding 'devbox global shellenv' to ~/.zshrc",
+        "grep -qF 'devbox global shellenv' ~/.zshrc || echo 'eval \"$(devbox global shellenv --init-hook)\"' >> ~/.zshrc",
+        "tail -n 1 ~/.zshrc"
+      ],
+      "install-starship-prompt": [
+        "if [ ! -f $HOME/.config/starship.toml ]",
+        "then",
+        "curl -fsSL https://raw.githubusercontent.com/yogeek/devbox-global/main/config/starship/starship.toml > $HOME/.config/starship.toml",
+        "fi"
       ]
     }
   }
