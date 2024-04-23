@@ -8,12 +8,10 @@
     "kind@latest",
     "vcluster@latest",
     "stern@latest",
-    "jq@latest",
     "argocd@latest",
     "aws-iam-authenticator@latest",
     "kubernetes@1.26.3",
     "kubernetes-helm-wrapped@latest",
-    "yq@latest",
     "diskonaut@latest",
     "bat@latest",
     "htop@latest",
@@ -21,7 +19,9 @@
     "fzf@latest",
     "fzf-zsh@latest",
     "eza@latest",
-    "starship@latest"
+    "starship@latest",
+    "jq@latest",
+    "yq-go@latest"
   ],
   "env": {
     "DEVBOX_GLOBAL_PREFIX": "$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default",
