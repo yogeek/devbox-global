@@ -29,8 +29,10 @@
   },
   "shell": {
     "init_hook": [
-      ". ${DEVBOX_GLOBAL_ROOT}/init.sh"
+      "export PS1='📦 devbox> '",
+      "echo 'Welcome to DevBox !"
     ],
+
     "scripts": {
       "install-hook-bash": [
         "echo adding 'devbox global shellenv' to ~/.bashrc",
