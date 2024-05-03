@@ -24,7 +24,8 @@
     "dive@latest",
     "dos2unix@latest",
     "k9s@latest",
-    "ngrok@latest"
+    "ngrok@latest",
+    "kubecolor@latest"
   ],
   "env": {
     "DEVBOX_GLOBAL_PREFIX": "$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default",

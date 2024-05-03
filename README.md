@@ -64,6 +64,7 @@ echo 'Welcome to DevBox !
 * [dos2unix@latest](https://www.nixhub.io/packages/dos2unix)
 * [k9s@latest](https://www.nixhub.io/packages/k9s)
 * [ngrok@latest](https://www.nixhub.io/packages/ngrok)
+* [kubecolor@latest](https://www.nixhub.io/packages/kubecolor)
 
 ## Script Details
 

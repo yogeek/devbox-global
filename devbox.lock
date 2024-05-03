@@ -861,6 +861,54 @@
         }
       }
     },
+    "kubecolor@latest": {
+      "last_modified": "2024-04-24T00:52:23-04:00",
+      "resolved": "github:NixOS/nixpkgs/a9040b7bf8adcd322493722106dd603eb87694ea#kubecolor",
+      "source": "devbox-search",
+      "version": "0.3.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/igli812qg55s863qcawhdav9fr4bikvv-kubecolor-0.3.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/igli812qg55s863qcawhdav9fr4bikvv-kubecolor-0.3.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8648wr1yd7nfhs2g3jmn2jx3ymg7ls4k-kubecolor-0.3.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8648wr1yd7nfhs2g3jmn2jx3ymg7ls4k-kubecolor-0.3.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/iycpy7a003x5407wfw7bpxn0064dv393-kubecolor-0.3.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/iycpy7a003x5407wfw7bpxn0064dv393-kubecolor-0.3.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mla7aqr00mnx1gmn0jj39ac72mfg6im5-kubecolor-0.3.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mla7aqr00mnx1gmn0jj39ac72mfg6im5-kubecolor-0.3.1"
+        }
+      }
+    },
     "kubernetes-helm-wrapped@latest": {
       "last_modified": "2024-04-02T02:53:36Z",
       "resolved": "github:NixOS/nixpkgs/080a4a27f206d07724b88da096e27ef63401a504#kubernetes-helm-wrapped",
