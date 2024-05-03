@@ -19,13 +19,23 @@ devbox run <script>
 ## Scripts
 Scripts are custom commands that can be run using this project's environment. This project has the following scripts:
 
-* [test](#devbox-run-test)
+* [install-hook-bash](#devbox-run-install-hook-bash)
+* [install-hook-zsh](#devbox-run-install-hook-zsh)
+* [install-starship-prompt](#devbox-run-install-starship-prompt)
+
+## Environment
+
+```sh
+DEVBOX_GLOBAL_PREFIX="$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default"
+DEVBOX_GLOBAL_ROOT="$HOME/.local/share/devbox/global/current"
+```
 
 ## Shell Init Hook
 The Shell Init Hook is a script that runs whenever the devbox environment is instantiated. It runs 
 on `devbox shell` and on `devbox run`.
 ```sh
-echo 'Welcome to devbox!' > /dev/null
+export PS1='📦 devbox> '
+echo 'Welcome to DevBox !
 ```
 
 ## Packages
@@ -33,16 +43,13 @@ echo 'Welcome to devbox!' > /dev/null
 * [awscli@latest](https://www.nixhub.io/packages/awscli)
 * [eksctl@latest](https://www.nixhub.io/packages/eksctl)
 * [kustomize@latest](https://www.nixhub.io/packages/kustomize)
-* [k9s@latest](https://www.nixhub.io/packages/k9s)
 * [kind@latest](https://www.nixhub.io/packages/kind)
 * [vcluster@latest](https://www.nixhub.io/packages/vcluster)
 * [stern@latest](https://www.nixhub.io/packages/stern)
-* [jq@latest](https://www.nixhub.io/packages/jq)
 * [argocd@latest](https://www.nixhub.io/packages/argocd)
 * [aws-iam-authenticator@latest](https://www.nixhub.io/packages/aws-iam-authenticator)
 * [kubernetes@1.26.3](https://www.nixhub.io/packages/kubernetes)
 * [kubernetes-helm-wrapped@latest](https://www.nixhub.io/packages/kubernetes-helm-wrapped)
-* [yq@latest](https://www.nixhub.io/packages/yq)
 * [diskonaut@latest](https://www.nixhub.io/packages/diskonaut)
 * [bat@latest](https://www.nixhub.io/packages/bat)
 * [htop@latest](https://www.nixhub.io/packages/htop)
@@ -50,12 +57,38 @@ echo 'Welcome to devbox!' > /dev/null
 * [fzf@latest](https://www.nixhub.io/packages/fzf)
 * [fzf-zsh@latest](https://www.nixhub.io/packages/fzf-zsh)
 * [eza@latest](https://www.nixhub.io/packages/eza)
+* [starship@latest](https://www.nixhub.io/packages/starship)
+* [jq@latest](https://www.nixhub.io/packages/jq)
+* [yq-go@latest](https://www.nixhub.io/packages/yq-go)
+* [dive@latest](https://www.nixhub.io/packages/dive)
+* [dos2unix@latest](https://www.nixhub.io/packages/dos2unix)
+* [k9s@latest](https://www.nixhub.io/packages/k9s)
+* [ngrok@latest](https://www.nixhub.io/packages/ngrok)
 
 ## Script Details
 
-### devbox run test
+### devbox run install-hook-bash
 ```sh
-echo "Error: no test specified" && exit 1
+echo adding 'devbox global shellenv' to ~/.bashrc
+grep -qF 'devbox global shellenv' ~/.bashrc || echo 'eval "$(devbox global shellenv --init-hook)"' >> ~/.bashrc
+tail -n 1 ~/.bashrc
+```
+&ensp;
+
+### devbox run install-hook-zsh
+```sh
+echo adding 'devbox global shellenv' to ~/.zshrc
+grep -qF 'devbox global shellenv' ~/.zshrc || echo 'eval "$(devbox global shellenv --init-hook)"' >> ~/.zshrc
+tail -n 1 ~/.zshrc
+```
+&ensp;
+
+### devbox run install-starship-prompt
+```sh
+if [ ! -f $HOME/.config/starship.toml ]
+then
+curl -fsSL https://raw.githubusercontent.com/yogeek/devbox-global/main/config/starship/starship.toml > $HOME/.config/starship.toml
+fi
 ```
 &ensp;
 
