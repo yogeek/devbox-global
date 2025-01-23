@@ -1,15 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.10.5/.schema/devbox.schema.json",
   "packages": [
-    "awscli@latest",
     "eksctl@latest",
     "kustomize@latest",
     "kind@latest",
-    "vcluster@latest",
     "stern@latest",
-    "argocd@latest",
-    "aws-iam-authenticator@latest",
-    "kubernetes@1.26.3",
     "kubernetes-helm-wrapped@latest",
     "diskonaut@latest",
     "bat@latest",
@@ -25,7 +20,17 @@
     "dos2unix@latest",
     "k9s@latest",
     "ngrok@latest",
-    "kubecolor@latest"
+    "kubecolor@latest",
+    "awscli2@latest",
+    "jnv@latest",
+    "terraform@latest",
+    "shell-gpt@latest",
+    "k6@latest",
+    "kubernetes@1.28.4",
+    "aws-iam-authenticator@latest",
+    "gh@latest",
+    "argocd@2.13.2",
+    "zellij@latest"
   ],
   "env": {
     "DEVBOX_GLOBAL_PREFIX": "$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default",
